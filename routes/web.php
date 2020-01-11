@@ -23,6 +23,9 @@ Route::delete('blog/{$id}','BlogController@destroy')->name('blog.destroy');
 
 Auth::routes();
 
+Route::get('/hello', function(){
+    return view('blogs.hello');
+});
 Route::resource('articles','articleController');
 
 

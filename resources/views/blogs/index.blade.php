@@ -18,14 +18,14 @@
         </div>
     @endif
 
-<table class="table table-responsive table-bordered table-striped table-hover table-fit">
-    <thead class="th-dark">
+<table class="table table-bordered">
+<thead class="thead-dark">
         <tr>
             <th widt="3%">No</th>
             <th width="20%">author</th>
             <th width="30%">title</th>
-            <th width="40%">description</th>
-            <th >Action</th>
+            <th width="35%">description</th>
+            <th width="12%">Action</th>
         </tr>
     </thead>
     <tbody>

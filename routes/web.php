@@ -15,18 +15,23 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::resource('blogs','BlogController');
+Route::resource('blogs','BlogController')->middleware('auth');
 
-Route::get('blog/{$id}','BlogController@edit')->name('blog.edit');
-Route::put('blog/{$id}','BlogController@update')->name('blog.update');
-Route::delete('blog/{$id}','BlogController@destroy')->name('blog.destroy');
+Route::get('blog/{$id}','BlogController@edit')->name('blog.edit')->middleware('auth');
+Route::put('blog/{$id}','BlogController@update')->name('blog.update')->middleware('auth');
+Route::delete('blog/{$id}','BlogController@destroy')->name('blog.destroy')->middleware('auth');
 
 Auth::routes();
 
 Route::get('/hello', function(){
     return view('blogs.hello');
 });
-Route::resource('articles','articleController');
+Route::resource('articles','articleController')->middleware('auth');
 
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+
+
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');

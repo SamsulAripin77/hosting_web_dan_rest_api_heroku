@@ -73,6 +73,9 @@ class apiController extends Controller
     {
         $article = article::find($id);
         $article->update($request->all());
+        return response()->json([
+            'status' => 'sukses'
+        ]);
    
     }
 
@@ -87,5 +90,8 @@ class apiController extends Controller
         
         $article = article::find($id);
         $article->delete();
+        return response()->json([
+            'status' => 'sukses'
+        ]);
     }
 }
